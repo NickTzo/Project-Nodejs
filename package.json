@@ -1,0 +1,14 @@
+{
+  "name": "project-nodejs",
+  "version": "1.0.0",
+  "description": "A booking App for rental cars",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Tz",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
