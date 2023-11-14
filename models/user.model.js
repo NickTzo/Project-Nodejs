@@ -20,6 +20,7 @@ let userSchema = new Schema({
   username: {
     type: String,
     required: [true, "Username is required field"],
+    unique: true,
     max: 50,
     trim: true
   },
