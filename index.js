@@ -5,14 +5,14 @@ const port = 3000;
 
 const cors = require('cors');
 
-const user = require('./')
-const car = require('/')
+const user = require('./routes/user.route')
+const car = require('./routes/car.route')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const swaggerUI = require('swagger-ui-express');
-const swaggerDocument = require('./swagger');
+// const swaggerUI = require('swagger-ui-express');
+// const swaggerDocument = require('./swagger');
 
 require('dotenv').config();
 
@@ -27,9 +27,9 @@ app.use(cors({ origin: '*' }))
 // app.use('/', express.static('files'));
 
 app.use('/api/users', user);
-app.use('/api/cars', product);
+app.use('/api/cars', car);
 
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument.options))
+// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument.options))
 
 
 

@@ -30,8 +30,8 @@ let carSchema = new Schema({
     type: Boolean
   }
 }, {
-  collection: 'products',
+  collection: 'cars',
   timestamps: true
 });
 
-module.exports = mongoose.model('Product', productsSchema);
+module.exports = mongoose.model('Car', carSchema);
