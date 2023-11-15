@@ -6,7 +6,7 @@ const port = 3000;
 const cors = require('cors');
 
 const user = require('./')
-const hotel = require('/')
+const car = require('/')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,7 +27,7 @@ app.use(cors({ origin: '*' }))
 // app.use('/', express.static('files'));
 
 app.use('/api/users', user);
-app.use('/api/hotels', product);
+app.use('/api/cars', product);
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument.options))
 
