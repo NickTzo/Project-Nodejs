@@ -25,6 +25,9 @@ let carSchema = new Schema({
   price: {
     type: Number
   },
+  photoURL: {
+    type: String
+  },
   booked: {
     type: Boolean
   }

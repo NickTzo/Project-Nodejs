@@ -43,6 +43,7 @@ exports.create = async (req, res) => {
     cc: req.body.cc,
     transmission: req.body.transmission,
     price: req.body.price,
+    photoURL: req.body.photoURL
   })
   console.log("Insert car with brand name : ", req.body.brand);
   try {
@@ -69,6 +70,7 @@ exports.update = async (req, res) => {
     cc: req.body.cc,
     transmission: req.body.transmission,
     price: req.body.price,
+    photoURL: req.body.photoURL,
     booked: req.body.booked
   }
   try {

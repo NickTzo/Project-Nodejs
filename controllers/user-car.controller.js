@@ -71,6 +71,7 @@ exports.updateCar = async (req, res) => {
   const car_cc = req.body.cc;
   const car_transmission = req.body.transmission;
   const car_price = req.body.price;
+  const car_photoURL = req.body.photoURL
   const car_booked = req.body.booked;
 
   console.log("Update car for username", username);
@@ -88,6 +89,7 @@ exports.updateCar = async (req, res) => {
           "cars.$.transmission": car_transmission,
           "cars.$.price": car_price,
           "cars.$.booked": car_booked,
+          "cars.$.photoURL": car_photoURL
         }
       }
     );

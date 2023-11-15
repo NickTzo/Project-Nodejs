@@ -12,8 +12,8 @@ const user_car = require('./routes/user-car.route')
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// const swaggerUI = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger');
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('./swagger');
 
 require('dotenv').config();
 
@@ -31,7 +31,7 @@ app.use('/api/users', user);
 app.use('/api/cars', car);
 app.use('/api/users-cars', user_car)
 
-// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument.options))
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument.options))
 
 
 
