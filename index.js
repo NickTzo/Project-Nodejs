@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const user = require('./routes/user.route')
 const car = require('./routes/car.route')
+const user_car = require('./routes/user-car.route')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,6 +29,7 @@ app.use(cors({ origin: '*' }))
 
 app.use('/api/users', user);
 app.use('/api/cars', car);
+app.use('/api/users-cars', user_car)
 
 // app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument.options))
 
