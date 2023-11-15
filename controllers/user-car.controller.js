@@ -64,6 +64,7 @@ exports.addCar = async (req, res) => {
 exports.updateCar = async (req, res) => {
 
   const username = req.params.username;
+  const car_id = req.params._id
   const car_brand = req.body.brand;
   const car_model = req.body.model;
   const car_year = req.body.year;
@@ -78,7 +79,7 @@ exports.updateCar = async (req, res) => {
 
   try {
     const result = await User.updateOne(
-      { username: username, "cars.brand": car_brand },
+      { username: username, "cars._id": car_id },
       {
         $set: {
           "cars.$.brand": car_brand,
@@ -107,14 +108,14 @@ exports.updateCar = async (req, res) => {
 exports.deleteCar = async (req, res) => {
 
   const username = req.params.username;
-  const brand = req.params.brand;
+  const car_id = req.params._id;
 
   try {
     const result = await User.updateOne(
       { username: username },
       {
         $pull: {
-          cars: { brand: brand }
+          cars: { _id: car_id }
         }
       }
     );

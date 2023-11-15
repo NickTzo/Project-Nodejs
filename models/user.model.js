@@ -32,7 +32,7 @@ let carSchema = new Schema({
     type: Boolean
   }
 }, {
-  _id: false
+  _id: true
 });
 
 

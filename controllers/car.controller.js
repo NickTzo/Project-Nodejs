@@ -60,8 +60,8 @@ exports.create = async (req, res) => {
 }
 
 exports.update = async (req, res) => {
-  const brand = req.body.brand;
-  console.log("Update car: ", req.body.brand);
+  const _id = req.body._id;
+  console.log("Update car: ", req.body._id);
 
   const updateCar = {
     model: req.body.model,
@@ -74,30 +74,30 @@ exports.update = async (req, res) => {
     booked: req.body.booked
   }
   try {
-    const result = await Car.findOneAndUpdate({ brand: brand }, updateCar, { new: true });
+    const result = await Car.findOneAndUpdate({ _id: _id }, updateCar, { new: true });
     res.status(200).json({ status: true, data: result });
-    console.log("Success in updating brand: ", brand);
+    console.log("Success in updating brand: ");
     // logger.info("Success in update brand");
     // logger.log("Success in update brand");
   } catch (err) {
     res.status(400).json({ status: false, data: err });
-    console.log("Problem in update brand: ", req.body.brand);
+    console.log("Problem in update brand: ");
     // logger.err("Problem in update brand");
   }
 }
 
 exports.delete = async (req, res) => {
-  const brand = req.body.brand;
-  console.log("Delete Car: ", brand);
+  const _id = req.body.car._id;
+  console.log("Delete Car: ", _id);
   try {
-    const result = await Car.findOneAndRemove({ brand: brand });
+    const result = await Car.findOneAndRemove({ id: id });
     res.status(200).json({ status: true, data: result });
-    console.log("Success in deleting car: ", brand)
+    console.log("Success in deleting car: ")
     // logger.info("Success in deleting car");
     // logger.log("Success in deleting car");
   } catch (err) {
     res.status(400).json({ status: false, data: err });
-    console.log("Problem in deleting car: ", brand);
+    console.log("Problem in deleting car: ");
     // logger.err("Problem in deleting car");
   }
 }
